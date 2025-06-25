@@ -1,0 +1,37 @@
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.alert-notification{
+  display: none;
+}
+
+.span-error-message{
+  display: block;
+  margin-top: 5px;
+  color: red;
+}
+
+.red-input-border{
+  border-color: red;
+}
+
+.box-logo{
+  margin-top: 10px;
+  display: block;
+  margin: auto;
+  width: 50px;
+}

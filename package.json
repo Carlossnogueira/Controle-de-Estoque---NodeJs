@@ -2,6 +2,7 @@
   "name": "controle-de-estoque---nodejs",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
@@ -18,7 +19,6 @@
     "dotenv": "16.5.0",
     "ejs": "3.1.10",
     "fastify": "5.4.0",
-    "point-of-view": "6.3.0",
     "zod": "3.25.67"
   },
   "devDependencies": {

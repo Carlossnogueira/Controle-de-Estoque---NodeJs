@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/login.css">
+    <title><%= title %></title>
+</head>
+<body>
+    
+    <!-- Caixa de login -->
+    <div class="login-box">
+    <img src="/public/images/box.png" alt="" class="box-logo">
+    <h2 class="text-center mb-4 mt-2">Bem vindo!</h2>
+    
+    <!-- Formulário de login -->
+    <form id="login-form">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="username" class="form-control" id="input-username" placeholder="Digite seu nome de usuário">
+        <span class="alert-notification" id="span-error-login"></span>
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="input-password" placeholder="Digite sua senha">
+        <span class="alert-notification" id="span-error-password"></span>
+      </div>
+      <button class="btn btn-primary w-100" id="login-button">Entrar</button>
+    </form>
+  </div>
+
+  <script src="/public/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/public/scripts/UserHome.js"></script>
+</body>
+</html>
