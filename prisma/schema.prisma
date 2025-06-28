@@ -14,17 +14,70 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id Int @id @default(autoincrement())
-  name String
-  email String @unique
-  passord_hash String
-  role Role @default(USER)
-  created_at DateTime @default(now())
+  id            Int        @id @default(autoincrement())
+  name          String
+  email         String     @unique
+  password_hash String
+  role          Role       @default(USER)
+  created_at    DateTime   @default(now())
+  Movments      Movments[]
+
+  @@map("user")
 }
 
-enum Role{
+enum Role {
   USER
   ADMIN
+}
+
+model Category {
+  id       Int        @id @default(autoincrement())
+  name     String
+  Products Products[]
+
+  @@map("category")
+}
+
+model Products {
+  id           Int        @id @default(autoincrement())
+  name         String
+  sku          String?
+  categoryId   Category   @relation(fields: [category_id], references: [id])
+  category_id  Int
+  quantity     Int
+  min_quantity Int
+  price_cost   Decimal
+  price_sale   Decimal
+  created_at   DateTime   @default(now())
+  Movments     Movments[]
+
+  @@map("Products")
+}
+
+model Movments {
+  id          Int      @id @default(autoincrement())
+  productId   Products @relation(fields: [product_id], references: [id])
+  product_id  Int
+  type        Type     @default(EXIT)
+  quantity    Int
+  description String
+  created_at  DateTime @default(now())
+  userId      User     @relation(fields: [user_id], references: [id])
+  user_id     Int
+
+  @@map("movments")
+}
+
+enum Type {
+  ENTRY
+  EXIT
+}
+
+model Suppliers {
+  id    Int    @id @default(autoincrement())
+  name  String
+  cnpj  String
+  phone String
+  email String
 }
